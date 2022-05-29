@@ -11,6 +11,7 @@ public class Meta {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+    @Enumerated(EnumType.STRING)
     private MetaRank metaRank;
     @ElementCollection
     private Map<Deck, Double> deckWinrate;
