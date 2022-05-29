@@ -1,14 +1,22 @@
 package sbnz.integracija.backend.facts;
 
+import lombok.NoArgsConstructor;
+
+import javax.persistence.*;
 import java.util.Objects;
 
+@Entity
 public class Card {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private int atk;
     private int def;
     private int cost;
     private String description;
+
+    @Enumerated(EnumType.STRING)
     private Hero cardClass;
     private String name;
     private Boolean isCenterpiece;

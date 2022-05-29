@@ -1,18 +1,30 @@
 package sbnz.integracija.backend.facts;
 
+import javax.persistence.*;
 import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 
+@Entity
 public class Meta {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private MetaRank metaRank;
+    @ElementCollection
     private Map<Deck, Double> deckWinrate;
+    @ElementCollection
     private Map<Card, Double> centerpieceCardWinrate;
+    @ElementCollection
     private Map<Hero, Double> heroWinrate;
+    @ElementCollection
+    @Enumerated(EnumType.STRING)
     private List<DeckCategory> metaDecks;
+    @ElementCollection
+    @Enumerated(EnumType.STRING)
     private List<DeckCategory> counterpickDecks;
+    @ManyToMany
     private List<Match> matchHistory;
 
     @Override

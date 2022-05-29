@@ -1,16 +1,24 @@
 package sbnz.integracija.backend.facts;
 
-import java.util.HashMap;
-import java.util.List;
+import javax.persistence.*;
+import java.util.Map;
 import java.util.Objects;
+
+@Entity
 
 public class Deck {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private HashMap<Card, Integer> cardQuantity;
+    @ElementCollection
+
+    private Map<Card, Integer> cardQuantity;
     private String name;
     private String strategy;
+    @Enumerated(EnumType.STRING)
     private DeckCategory category;
+    @Enumerated(EnumType.STRING)
     private Hero deckHero;
 
     @Override
@@ -27,8 +35,10 @@ public class Deck {
 
     @Override
     public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
+        if (this == o)
+            return true;
+        if (o == null || getClass() != o.getClass())
+            return false;
         Deck deck = (Deck) o;
         return Objects.equals(id, deck.id) &&
                 Objects.equals(cardQuantity, deck.cardQuantity) &&
@@ -51,11 +61,11 @@ public class Deck {
         this.id = id;
     }
 
-    public HashMap<Card, Integer> getCardQuantity() {
+    public Map<Card, Integer> getCardQuantity() {
         return cardQuantity;
     }
 
-    public void setCardQuantity(HashMap<Card, Integer> cardQuantity) {
+    public void setCardQuantity(Map<Card, Integer> cardQuantity) {
         this.cardQuantity = cardQuantity;
     }
 
@@ -91,7 +101,8 @@ public class Deck {
         this.deckHero = deckHero;
     }
 
-    public Deck(Long id, HashMap<Card, Integer> cardQuantity, String name, String strategy, DeckCategory category, Hero deckHero) {
+    public Deck(Long id, Map<Card, Integer> cardQuantity, String name, String strategy, DeckCategory category,
+            Hero deckHero) {
         this.id = id;
         this.cardQuantity = cardQuantity;
         this.name = name;

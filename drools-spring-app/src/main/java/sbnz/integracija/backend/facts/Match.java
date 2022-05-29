@@ -1,17 +1,28 @@
 package sbnz.integracija.backend.facts;
 
+import javax.persistence.*;
 import java.time.LocalDateTime;
 import java.util.List;
 import java.util.Objects;
 
+@Entity
+
 public class Match {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+    @Enumerated(EnumType.STRING)
     private Hero firstPlayer;
+    @Enumerated(EnumType.STRING)
     private Hero secondPlayer;
+    @ManyToMany
     private List<Card> cardsPlayedFirstPlayer;
+    @ManyToMany
     private List<Card> cardsPlayedSecondPlayer;
+    @OneToOne
     private Deck deckFirstPlayer;
+    @OneToOne
     private Deck deckSecondPlayer;
     private Boolean firstPlayerWon;
     private Boolean secondPlayerWon;

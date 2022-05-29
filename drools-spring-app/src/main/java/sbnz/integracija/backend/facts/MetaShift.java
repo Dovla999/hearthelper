@@ -1,17 +1,31 @@
 package sbnz.integracija.backend.facts;
 
-import java.util.HashMap;
+import javax.persistence.*;
+import java.util.Map;
 import java.util.List;
+import java.util.Map;
 import java.util.Objects;
 
+@Entity
 public class MetaShift {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
+    @ManyToOne
     private Meta pastMeta;
+    @ManyToOne
     private Meta newMeta;
-    private HashMap<Deck, Integer> deckRankingChange;
-    private HashMap<Card, Integer> cardRankingChange;
-    private HashMap<Card, Integer> heroRankingChange;
+    @ElementCollection
+    private Map<Deck, Integer> deckRankingChange;
+
+    @ElementCollection
+    private Map<Card, Integer> cardRankingChange;
+    @ElementCollection
+    private Map<Card, Integer> heroRankingChange;
+    @ElementCollection
+    @Enumerated(EnumType.STRING)
     private List<DeckCategory> newDeckCategories;
 
     @Override
@@ -70,27 +84,27 @@ public class MetaShift {
         this.newMeta = newMeta;
     }
 
-    public HashMap<Deck, Integer> getDeckRankingChange() {
+    public Map<Deck, Integer> getDeckRankingChange() {
         return deckRankingChange;
     }
 
-    public void setDeckRankingChange(HashMap<Deck, Integer> deckRankingChange) {
+    public void setDeckRankingChange(Map<Deck, Integer> deckRankingChange) {
         this.deckRankingChange = deckRankingChange;
     }
 
-    public HashMap<Card, Integer> getCardRankingChange() {
+    public Map<Card, Integer> getCardRankingChange() {
         return cardRankingChange;
     }
 
-    public void setCardRankingChange(HashMap<Card, Integer> cardRankingChange) {
+    public void setCardRankingChange(Map<Card, Integer> cardRankingChange) {
         this.cardRankingChange = cardRankingChange;
     }
 
-    public HashMap<Card, Integer> getHeroRankingChange() {
+    public Map<Card, Integer> getHeroRankingChange() {
         return heroRankingChange;
     }
 
-    public void setHeroRankingChange(HashMap<Card, Integer> heroRankingChange) {
+    public void setHeroRankingChange(Map<Card, Integer> heroRankingChange) {
         this.heroRankingChange = heroRankingChange;
     }
 
@@ -102,7 +116,7 @@ public class MetaShift {
         this.newDeckCategories = newDeckCategories;
     }
 
-    public MetaShift(Long id, Meta pastMeta, Meta newMeta, HashMap<Deck, Integer> deckRankingChange, HashMap<Card, Integer> cardRankingChange, HashMap<Card, Integer> heroRankingChange, List<DeckCategory> newDeckCategories) {
+    public MetaShift(Long id, Meta pastMeta, Meta newMeta, Map<Deck, Integer> deckRankingChange, Map<Card, Integer> cardRankingChange, Map<Card, Integer> heroRankingChange, List<DeckCategory> newDeckCategories) {
         this.id = id;
         this.pastMeta = pastMeta;
         this.newMeta = newMeta;

@@ -2,7 +2,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>sbnz.integracija</groupId>
   <artifactId>drools-spring-kjar</artifactId>
-  <version>0.0.2-SNAPSHOT</version>
+  <version>0.0.1-SNAPSHOT</version>
   <name>Drools Spring kjar</name>
   <packaging>jar</packaging>
 </project>

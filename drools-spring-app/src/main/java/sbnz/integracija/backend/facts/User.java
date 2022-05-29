@@ -1,14 +1,21 @@
 package sbnz.integracija.backend.facts;
 
+import javax.persistence.*;
 import java.util.List;
 import java.util.Objects;
 
+@Entity
 public class User {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
 
     private Long id;
+    @ManyToMany
     private List<Match> personalMatchHistory;
+    @ManyToMany
     private List<Card> cardsOwned;
     private int dust;
+    @ManyToMany
     private List<Deck> decksNotPreferred;
 
     @Override
