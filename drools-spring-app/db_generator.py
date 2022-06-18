@@ -63,7 +63,9 @@ cards_rows = [
         )
         if "text" in card and card["text"]
         else "random description",
-        "true" if random.randint(1, 100) == 5 else "false",
+        "true"
+        if random.randint(1, 80) == 5 and card["cardClass"] not in classes
+        else "false",
         re.sub(
             "[^0-9a-zA-Z ]+",
             "",
