@@ -360,6 +360,7 @@ meta_shift_new_deck_categories_insert = insert_template(
 user_rows = []
 user_cards_owned_rows = []
 user_decks_not_preferred_rows = []
+user_personal_match_history_rows = []
 
 
 for i in range(USER_CONSTANT):
@@ -370,6 +371,16 @@ for i in range(USER_CONSTANT):
     for j in range(len(deck_rows)):
         if random.randint(0, 1337) < 69:
             user_decks_not_preferred_rows.append(f"({i+1},{j+1})")
+
+
+for match in range(MATCH_CONSTANT):
+    first_user = random.randint(1, USER_CONSTANT)
+    second_user = first_user
+    while second_user == first_user:
+        second_user = random.randint(1, USER_CONSTANT)
+    user_personal_match_history_rows.append(f"({first_user}, {match+1})")
+    user_personal_match_history_rows.append(f"({second_user}, {match+1})")
+
 
 user_insert = insert_template(
     "user",
@@ -385,6 +396,12 @@ user_decks_not_preferred_insert = insert_template(
     "user_decks_not_preferred",
     ["user_id", "decks_not_preferred_id"],
     user_decks_not_preferred_rows,
+)
+
+user_personal_match_history_insert = insert_template(
+    "user_personal_match_history",
+    ["user_id", "personal_match_history_id"],
+    user_personal_match_history_rows,
 )
 
 
@@ -430,3 +447,6 @@ with open("data.sql", "w") as sql_script:
     sql_script.write(user_cards_owned_insert)
     sql_script.write(";")
     sql_script.write(user_decks_not_preferred_insert)
+    sql_script.write(";")
+    sql_script.write(user_personal_match_history_insert)
+    sql_script.write(";")
