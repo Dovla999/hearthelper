@@ -4,6 +4,9 @@ import sbnz.integracija.backend.facts.*;
 import sbnz.integracija.backend.dto.*;
 import java.util.*;
 
+import accumulate sbnz.integracija.backend.drools.EnemyHeroOrDeckCategoryCountAccumulateFunction enemyHeroOrDeckCategoryCountAccumulateFunction;
+import accumulate sbnz.integracija.backend.drools.KeyWithMaxValueInMapAccumulateFunction keyWithMaxValueInMapAccumulateFunction;
+
 function boolean debug(String x) {
     System.out.println("lhs_debug(): "+x);
     return true;
@@ -11,23 +14,32 @@ function boolean debug(String x) {
 
 rule "Most frequent enemy hero"
     salience 3
+    dialect "mvel"
     when
         $u: User( $pmh: personalMatchHistory )
-        $countMap: Map() from accumulate(
+//        $countMap: Map() from accumulate(
+//            Match( $hero: secondPlayer ) from $pmh,
+//            init( Map enemyHeroCount = new HashMap(); ),
+//            action( if (enemyHeroCount.containsKey($hero)) enemyHeroCount.put($hero, ((Integer)enemyHeroCount.get($hero)) + 1);
+//                    else enemyHeroCount.put($hero, 1); ),
+//            result( enemyHeroCount )
+//        )
+        accumulate(
             Match( $hero: secondPlayer ) from $pmh,
-            init( Map enemyHeroCount = new HashMap(); ),
-            action( if (enemyHeroCount.containsKey($hero)) enemyHeroCount.put($hero, ((Integer)enemyHeroCount.get($hero)) + 1);
-                    else enemyHeroCount.put($hero, 1); ),
-            result( enemyHeroCount )
+            $countMap: enemyHeroOrDeckCategoryCountAccumulateFunction( $hero )
         )
-        $mostFreq: Hero() from accumulate(
+//        $mostFreq: Hero() from accumulate(
+//            Map.Entry( $key: key, $val: value ) from $countMap.entrySet(),
+//            init( Hero mostFrequentHero = null; ),
+//            action( if (mostFrequentHero == null || ((Integer)$val) > ((Integer)$countMap.get(mostFrequentHero))) mostFrequentHero = (Hero)$key; ),
+//            result( mostFrequentHero )
+//        )
+        accumulate(
             Map.Entry( $key: key, $val: value ) from $countMap.entrySet(),
-            init( Hero mostFrequentHero = null; ),
-            action( if (mostFrequentHero == null || ((Integer)$val) > ((Integer)$countMap.get(mostFrequentHero))) mostFrequentHero = (Hero)$key; ),
-            result( mostFrequentHero )
+            $mostFreq: keyWithMaxValueInMapAccumulateFunction( ["key" : (Object)$key, "val" : (Object)$val, "map" : (Object)$countMap] )
         )
     then
-        System.out.println($mostFreq.name());
+        System.out.println(((Hero) $mostFreq).name());
         System.out.println("HURAAA!");
         insert( $mostFreq );
 end

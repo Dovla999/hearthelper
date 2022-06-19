@@ -1,8 +1,10 @@
 F:\Fakultet\4. godina\2. semestar\SBZ\hearthelper\drools-spring-app\src\main\java\sbnz\integracija\backend\facts\User.java
+F:\Fakultet\4. godina\2. semestar\SBZ\hearthelper\drools-spring-app\src\main\java\sbnz\integracija\backend\drools\KeyWithMaxValueInMapAccumulateFunction.java
 F:\Fakultet\4. godina\2. semestar\SBZ\hearthelper\drools-spring-app\src\main\java\sbnz\integracija\backend\facts\Meta.java
 F:\Fakultet\4. godina\2. semestar\SBZ\hearthelper\drools-spring-app\src\main\java\sbnz\integracija\backend\facts\MetaShift.java
 F:\Fakultet\4. godina\2. semestar\SBZ\hearthelper\drools-spring-app\src\main\java\sbnz\integracija\backend\repository\UserRepository.java
 F:\Fakultet\4. godina\2. semestar\SBZ\hearthelper\drools-spring-app\src\main\java\sbnz\integracija\backend\facts\Match.java
+F:\Fakultet\4. godina\2. semestar\SBZ\hearthelper\drools-spring-app\src\main\java\sbnz\integracija\backend\drools\EnemyHeroOrDeckCategoryCountAccumulateFunction.java
 F:\Fakultet\4. godina\2. semestar\SBZ\hearthelper\drools-spring-app\src\main\java\sbnz\integracija\backend\facts\Hero.java
 F:\Fakultet\4. godina\2. semestar\SBZ\hearthelper\drools-spring-app\src\main\java\sbnz\integracija\backend\service\CardService.java
 F:\Fakultet\4. godina\2. semestar\SBZ\hearthelper\drools-spring-app\src\main\java\sbnz\integracija\backend\repository\MatchRepository.java
