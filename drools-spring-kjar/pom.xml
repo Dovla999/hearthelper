@@ -5,4 +5,19 @@
   <version>0.0.1-SNAPSHOT</version>
   <name>Drools Spring kjar</name>
   <packaging>jar</packaging>
+
+  <build>
+    <sourceDirectory>src</sourceDirectory>
+    <resources>
+      <resource>
+        <directory>src/main/resources</directory>
+        <includes>
+          <include>META-INF/kmodule.xml</include>
+          <include>sbnz/integracija/matchHistoryRules/matchHistoryRules.drl</include>
+        </includes>
+        <targetPath>.</targetPath>
+      </resource>
+    </resources>
+  </build>
+
 </project>

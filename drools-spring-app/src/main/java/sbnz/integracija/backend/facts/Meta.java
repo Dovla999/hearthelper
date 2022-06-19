@@ -1,5 +1,8 @@
 package sbnz.integracija.backend.facts;
 
+import org.hibernate.annotations.Fetch;
+import org.hibernate.annotations.FetchMode;
+
 import javax.persistence.*;
 import java.util.List;
 import java.util.Map;
@@ -13,19 +16,25 @@ public class Meta {
     private Long id;
     @Enumerated(EnumType.STRING)
     private MetaRank metaRank;
-    @ElementCollection
+    @ElementCollection(fetch = FetchType.EAGER)
+    @Fetch(value = FetchMode.SUBSELECT)
     private Map<Deck, Double> deckWinrate;
-    @ElementCollection
+    @ElementCollection(fetch = FetchType.EAGER)
+    @Fetch(value = FetchMode.SUBSELECT)
     private Map<Card, Double> centerpieceCardWinrate;
-    @ElementCollection
+    @ElementCollection(fetch = FetchType.EAGER)
+    @Fetch(value = FetchMode.SUBSELECT)
     private Map<Hero, Double> heroWinrate;
-    @ElementCollection
+    @ElementCollection(fetch = FetchType.EAGER)
+    @Fetch(value = FetchMode.SUBSELECT)
     @Enumerated(EnumType.STRING)
     private List<DeckCategory> metaDecks;
-    @ElementCollection
+    @ElementCollection(fetch = FetchType.EAGER)
+    @Fetch(value = FetchMode.SUBSELECT)
     @Enumerated(EnumType.STRING)
     private List<DeckCategory> counterpickDecks;
-    @ManyToMany
+    @ManyToMany(fetch = FetchType.EAGER)
+    @Fetch(value = FetchMode.SUBSELECT)
     private List<Match> matchHistory;
 
     @Override

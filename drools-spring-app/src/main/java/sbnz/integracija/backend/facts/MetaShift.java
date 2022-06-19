@@ -1,5 +1,8 @@
 package sbnz.integracija.backend.facts;
 
+import org.hibernate.annotations.Fetch;
+import org.hibernate.annotations.FetchMode;
+
 import javax.persistence.*;
 import java.util.Map;
 import java.util.List;
@@ -13,18 +16,22 @@ public class MetaShift {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.EAGER)
     private Meta pastMeta;
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.EAGER)
     private Meta newMeta;
-    @ElementCollection
+    @ElementCollection(fetch = FetchType.EAGER)
+    @Fetch(value = FetchMode.SUBSELECT)
     private Map<Deck, Integer> deckRankingChange;
 
-    @ElementCollection
+    @ElementCollection(fetch = FetchType.EAGER)
+    @Fetch(value = FetchMode.SUBSELECT)
     private Map<Card, Integer> cardRankingChange;
-    @ElementCollection
+    @ElementCollection(fetch = FetchType.EAGER)
+    @Fetch(value = FetchMode.SUBSELECT)
     private Map<Card, Integer> heroRankingChange;
-    @ElementCollection
+    @ElementCollection(fetch = FetchType.EAGER)
+    @Fetch(value = FetchMode.SUBSELECT)
     @Enumerated(EnumType.STRING)
     private List<DeckCategory> newDeckCategories;
 

@@ -1,5 +1,8 @@
 package sbnz.integracija.backend.facts;
 
+import org.hibernate.annotations.Fetch;
+import org.hibernate.annotations.FetchMode;
+
 import javax.persistence.*;
 import java.time.LocalDateTime;
 import java.util.List;
@@ -16,13 +19,15 @@ public class Match {
     private Hero firstPlayer;
     @Enumerated(EnumType.STRING)
     private Hero secondPlayer;
-    @ManyToMany
+    @ManyToMany(fetch = FetchType.EAGER)
+    @Fetch(value = FetchMode.SUBSELECT)
     private List<Card> cardsPlayedFirstPlayer;
-    @ManyToMany
+    @ManyToMany(fetch = FetchType.EAGER)
+    @Fetch(value = FetchMode.SUBSELECT)
     private List<Card> cardsPlayedSecondPlayer;
-    @OneToOne
+    @OneToOne(fetch = FetchType.EAGER)
     private Deck deckFirstPlayer;
-    @OneToOne
+    @OneToOne(fetch = FetchType.EAGER)
     private Deck deckSecondPlayer;
     private Boolean firstPlayerWon;
     private Boolean secondPlayerWon;

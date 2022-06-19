@@ -1,0 +1,31 @@
+package sbnz.integracija;
+
+import sbnz.integracija.backend.facts.*;
+import java.util.*;
+
+function boolean debug(String x) {
+    System.out.println("lhs_debug(): "+x);
+    return true;
+}
+
+rule "Most frequent enemy hero"
+    salience 3
+    when
+        $u: User( debug("xd"), $pmh: personalMatchHistory )
+        $countMap: Map() from accumulate(
+            Match( $hero: secondPlayer ) from $pmh,
+            init( Map enemyHeroCount = new HashMap(); ),
+            action( if (enemyHeroCount.containsKey($hero)) enemyHeroCount.put($hero, ((Integer)enemyHeroCount.get($hero)) + 1);
+                    else enemyHeroCount.put($hero, 1); ),
+            result( enemyHeroCount )
+        )
+        $mostFreq: Hero() from accumulate(
+            Map.Entry( $key: key, $val: value ) from $countMap.entrySet(),
+            init( Hero mostFrequentHero = null; ),
+            action( if (mostFrequentHero == null || ((Integer)$val) > ((Integer)$countMap.get(mostFrequentHero))) mostFrequentHero = (Hero)$key; ),
+            result( mostFrequentHero )
+        )
+    then
+        System.out.println($mostFreq.name());
+        System.out.println("HURAAA!");
+end

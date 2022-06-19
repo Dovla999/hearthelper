@@ -1,5 +1,8 @@
 package sbnz.integracija.backend.facts;
 
+import org.hibernate.annotations.Fetch;
+import org.hibernate.annotations.FetchMode;
+
 import javax.persistence.*;
 import java.util.Map;
 import java.util.Objects;
@@ -11,7 +14,8 @@ public class Deck {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    @ElementCollection
+    @ElementCollection(fetch = FetchType.EAGER)
+    @Fetch(value = FetchMode.SUBSELECT)
 
     private Map<Card, Integer> cardQuantity;
     private String name;
