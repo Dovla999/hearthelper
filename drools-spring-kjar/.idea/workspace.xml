@@ -19,14 +19,11 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6ff4aaca-ef47-42c1-b013-69b34603101f" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/../drools-spring-app/src/main/java/sbnz/integracija/backend/dto/MatchHistoryOutputDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../drools-spring-app/src/main/java/sbnz/integracija/backend/repository/MatchRepository.java" afterDir="false" />
+    <list default="true" id="6ff4aaca-ef47-42c1-b013-69b34603101f" name="Default Changelist" comment="Hero recommendation forward chain implemented fully">
       <change beforePath="$PROJECT_DIR$/../drools-spring-app/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../drools-spring-app/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../drools-spring-app/src/main/java/sbnz/integracija/backend/service/CardService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../drools-spring-app/src/main/java/sbnz/integracija/backend/service/CardService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../drools-spring-app/target/drools-spring-app-0.0.1-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/../drools-spring-app/target/drools-spring-app-0.0.1-SNAPSHOT.jar" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../drools-spring-app/target/drools-spring-app-0.0.1-SNAPSHOT.jar.original" beforeDir="false" afterPath="$PROJECT_DIR$/../drools-spring-app/target/drools-spring-app-0.0.1-SNAPSHOT.jar.original" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../drools-spring-app/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/../drools-spring-app/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../drools-spring-app/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/../drools-spring-app/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/sbnz/integracija/matchHistoryRules/matchHistoryRules.drl" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/sbnz/integracija/matchHistoryRules/matchHistoryRules.drl" afterDir="false" />
@@ -86,8 +83,16 @@
       <workItem from="1653353273942" duration="2031000" />
       <workItem from="1653369724214" duration="1983000" />
       <workItem from="1653975190150" duration="14209000" />
-      <workItem from="1655342141677" duration="21557000" />
+      <workItem from="1655342141677" duration="29916000" />
     </task>
+    <task id="LOCAL-00001" summary="Hero recommendation forward chain implemented fully">
+      <created>1655661879305</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1655661879305</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -105,6 +110,10 @@
     </option>
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Hero recommendation forward chain implemented fully" />
+    <option name="LAST_COMMIT_MESSAGE" value="Hero recommendation forward chain implemented fully" />
+  </component>
   <component name="WindowStateProjectService">
     <state x="760" y="274" key="#Project_Structure" timestamp="1653977921076">
       <screen x="0" y="0" width="2560" height="1400" />
@@ -114,26 +123,30 @@
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="1060" y="455" key="FileChooserDialogImpl/0.0.2560.1400@0.0.2560.1400" timestamp="1653975571561" />
-    <state width="2517" height="401" key="GridCell.Tab.0.bottom" timestamp="1655658192368">
+    <state width="2517" height="401" key="GridCell.Tab.0.bottom" timestamp="1655670735506">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="2517" height="401" key="GridCell.Tab.0.bottom/0.0.2560.1400@0.0.2560.1400" timestamp="1655658192368" />
-    <state width="2517" height="401" key="GridCell.Tab.0.center" timestamp="1655658192367">
+    <state width="2517" height="401" key="GridCell.Tab.0.bottom/0.0.2560.1400@0.0.2560.1400" timestamp="1655670735506" />
+    <state width="2517" height="401" key="GridCell.Tab.0.center" timestamp="1655670735506">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="2517" height="401" key="GridCell.Tab.0.center/0.0.2560.1400@0.0.2560.1400" timestamp="1655658192367" />
-    <state width="2517" height="401" key="GridCell.Tab.0.left" timestamp="1655658192367">
+    <state width="2517" height="401" key="GridCell.Tab.0.center/0.0.2560.1400@0.0.2560.1400" timestamp="1655670735506" />
+    <state width="2517" height="401" key="GridCell.Tab.0.left" timestamp="1655670735506">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="2517" height="401" key="GridCell.Tab.0.left/0.0.2560.1400@0.0.2560.1400" timestamp="1655658192367" />
-    <state width="2517" height="401" key="GridCell.Tab.0.right" timestamp="1655658192368">
+    <state width="2517" height="401" key="GridCell.Tab.0.left/0.0.2560.1400@0.0.2560.1400" timestamp="1655670735506" />
+    <state width="2517" height="401" key="GridCell.Tab.0.right" timestamp="1655670735506">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="2517" height="401" key="GridCell.Tab.0.right/0.0.2560.1400@0.0.2560.1400" timestamp="1655658192368" />
+    <state width="2517" height="401" key="GridCell.Tab.0.right/0.0.2560.1400@0.0.2560.1400" timestamp="1655670735506" />
     <state x="760" y="274" key="SettingsEditor" timestamp="1653992665395">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="760" y="274" key="SettingsEditor/0.0.2560.1400@0.0.2560.1400" timestamp="1653992665395" />
+    <state x="872" y="433" key="Vcs.Push.Dialog.v2" timestamp="1655661889399">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="872" y="433" key="Vcs.Push.Dialog.v2/0.0.2560.1400@0.0.2560.1400" timestamp="1655661889399" />
     <state x="976" y="523" key="com.intellij.ide.util.TipDialog" timestamp="1653369724292">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
