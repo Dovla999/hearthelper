@@ -1,6 +1,7 @@
 package sbnz.integracija;
 
 import sbnz.integracija.backend.facts.*;
+import sbnz.integracija.backend.dto.*;
 import java.util.*;
 
 function boolean debug(String x) {
@@ -11,7 +12,7 @@ function boolean debug(String x) {
 rule "Most frequent enemy hero"
     salience 3
     when
-        $u: User( debug("xd"), $pmh: personalMatchHistory )
+        $u: User( $pmh: personalMatchHistory )
         $countMap: Map() from accumulate(
             Match( $hero: secondPlayer ) from $pmh,
             init( Map enemyHeroCount = new HashMap(); ),
@@ -28,4 +29,58 @@ rule "Most frequent enemy hero"
     then
         System.out.println($mostFreq.name());
         System.out.println("HURAAA!");
+        insert( $mostFreq );
 end
+
+rule "Most successful opposing hero (all matches in knowledge base taken into account)"
+    salience 2
+    when
+        $mostFreqHero: Hero()
+        $winsAgainstThisHero: Map() from accumulate(
+            Match( $firstPlayer: firstPlayer, $secondPlayer: secondPlayer, $firstWon: firstPlayerWon ),
+            init( Map map = new HashMap(); ),
+            action( if ($firstPlayer == $mostFreqHero && !$firstWon) {
+                        if (map.containsKey($secondPlayer)) map.put($secondPlayer, ((Integer)map.get($secondPlayer)) + 1);
+                        else map.put($secondPlayer, 1);
+                   } else if ($secondPlayer == $mostFreqHero && $firstWon) {
+                        if (map.containsKey($firstPlayer)) map.put($firstPlayer, ((Integer)map.get($firstPlayer)) + 1);
+                        else map.put($firstPlayer, 1);
+                   } ),
+            result( map )
+        )
+        $mostSuccessfulHero: Hero() from accumulate(
+            Map.Entry( $key: key, $val: value ) from $winsAgainstThisHero.entrySet(),
+            init( Hero mostFrequentHero = null; ),
+            action( if (mostFrequentHero == null || ((Integer)$val) > ((Integer)$winsAgainstThisHero.get(mostFrequentHero))) mostFrequentHero = (Hero)$key; System.out.println($val); ),
+            result( mostFrequentHero )
+        )
+        $output: MatchHistoryOutputDTO()
+    then
+        System.out.println("hi from 2nd rule!");
+        System.out.println($mostSuccessfulHero.name());
+        $output.setHero($mostSuccessfulHero);
+end
+
+
+//rule "Most frequent enemy deck category"
+//    salience 3
+//    when
+//        $u: User( $pmh: personalMatchHistory )
+//        $countMap: Map() from accumulate(
+//            Match( $hero: secondPlayer ) from $pmh,
+//            init( Map enemyHeroCount = new HashMap(); ),
+//            action( if (enemyHeroCount.containsKey($hero)) enemyHeroCount.put($hero, ((Integer)enemyHeroCount.get($hero)) + 1);
+//                    else enemyHeroCount.put($hero, 1); ),
+//            result( enemyHeroCount )
+//        )
+//        $mostFreq: Hero() from accumulate(
+//            Map.Entry( $key: key, $val: value ) from $countMap.entrySet(),
+//            init( Hero mostFrequentHero = null; ),
+//            action( if (mostFrequentHero == null || ((Integer)$val) > ((Integer)$countMap.get(mostFrequentHero))) mostFrequentHero = (Hero)$key; ),
+//            result( mostFrequentHero )
+//        )
+//    then
+//        System.out.println($mostFreq.name());
+//        System.out.println("HURAAA!");
+//        insert( $mostFreq );
+//end

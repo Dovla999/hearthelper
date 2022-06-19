@@ -3,6 +3,7 @@ sbnz\integracija\backend\controller\SampleHomeController.class
 sbnz\integracija\backend\facts\Hero.class
 sbnz\integracija\backend\facts\Deck.class
 sbnz\integracija\backend\facts\MetaRank.class
+sbnz\integracija\backend\dto\MatchHistoryOutputDTO.class
 sbnz\integracija\backend\facts\Match.class
 sbnz\integracija\backend\HearthApp.class
 sbnz\integracija\backend\repository\UserRepository.class
@@ -11,4 +12,5 @@ sbnz\integracija\backend\facts\Meta.class
 sbnz\integracija\backend\facts\User.class
 sbnz\integracija\backend\facts\Card.class
 sbnz\integracija\backend\facts\MetaShift.class
+sbnz\integracija\backend\repository\MatchRepository.class
 sbnz\integracija\backend\facts\DeckCategory.class

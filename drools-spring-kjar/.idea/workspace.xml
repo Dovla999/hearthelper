@@ -20,73 +20,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6ff4aaca-ef47-42c1-b013-69b34603101f" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/../drools-spring-app/.idea/jarRepositories.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../drools-spring-app/.idea/jpa-buddy.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../drools-spring-app/.idea/libraries/Maven__antlr_antlr_2_7_7.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../drools-spring-app/.idea/libraries/Maven__com_h2database_h2_1_4_197.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../drools-spring-app/.idea/libraries/Maven__com_zaxxer_HikariCP_2_7_9.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../drools-spring-app/.idea/libraries/Maven__dom4j_dom4j_1_6_1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../drools-spring-app/.idea/libraries/Maven__javax_transaction_javax_transaction_api_1_2.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../drools-spring-app/.idea/libraries/Maven__org_aspectj_aspectjweaver_1_8_13.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../drools-spring-app/.idea/libraries/Maven__org_hibernate_common_hibernate_commons_annotations_5_0_1_Final.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../drools-spring-app/.idea/libraries/Maven__org_hibernate_hibernate_core_5_2_17_Final.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../drools-spring-app/.idea/libraries/Maven__org_hibernate_javax_persistence_hibernate_jpa_2_1_api_1_0_2_Final.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../drools-spring-app/.idea/libraries/Maven__org_javassist_javassist_3_25_0_GA.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../drools-spring-app/.idea/libraries/Maven__org_jboss_jandex_2_0_3_Final.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../drools-spring-app/.idea/libraries/Maven__org_postgresql_postgresql_42_2_5.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../drools-spring-app/.idea/libraries/Maven__org_projectlombok_lombok_1_16_22.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../drools-spring-app/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_aop_2_0_5_RELEASE.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../drools-spring-app/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_data_jpa_2_0_5_RELEASE.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../drools-spring-app/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_jdbc_2_0_5_RELEASE.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../drools-spring-app/.idea/libraries/Maven__org_springframework_data_spring_data_commons_2_0_10_RELEASE.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../drools-spring-app/.idea/libraries/Maven__org_springframework_data_spring_data_jpa_2_0_10_RELEASE.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../drools-spring-app/.idea/libraries/Maven__org_springframework_spring_aspects_5_0_9_RELEASE.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../drools-spring-app/.idea/libraries/Maven__org_springframework_spring_jdbc_5_0_9_RELEASE.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../drools-spring-app/.idea/libraries/Maven__org_springframework_spring_orm_5_0_9_RELEASE.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../drools-spring-app/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../drools-spring-app/src/main/java/sbnz/integracija/backend/repository/UserRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/sbnz/integracija/matchHistoryRules/matchHistoryRules.drl" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../drools-spring-app/.idea/libraries/Maven__sbnz_integracija_drools_spring_kjar_0_0_2_SNAPSHOT.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../drools-spring-app/.idea/libraries/Maven__sbnz_integracija_drools_spring_kjar_0_0_1_SNAPSHOT.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../drools-spring-app/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../drools-spring-app/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../drools-spring-app/src/main/java/sbnz/integracija/backend/dto/MatchHistoryOutputDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../drools-spring-app/src/main/java/sbnz/integracija/backend/repository/MatchRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../drools-spring-app/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../drools-spring-app/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../drools-spring-app/drools-spring-app.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../drools-spring-app/drools-spring-app.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../drools-spring-app/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../drools-spring-app/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../drools-spring-app/src/main/java/sbnz/integracija/backend/HearthApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/../drools-spring-app/src/main/java/sbnz/integracija/backend/HearthApp.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../drools-spring-app/src/main/java/sbnz/integracija/backend/facts/Deck.java" beforeDir="false" afterPath="$PROJECT_DIR$/../drools-spring-app/src/main/java/sbnz/integracija/backend/facts/Deck.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../drools-spring-app/src/main/java/sbnz/integracija/backend/facts/Match.java" beforeDir="false" afterPath="$PROJECT_DIR$/../drools-spring-app/src/main/java/sbnz/integracija/backend/facts/Match.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../drools-spring-app/src/main/java/sbnz/integracija/backend/facts/Meta.java" beforeDir="false" afterPath="$PROJECT_DIR$/../drools-spring-app/src/main/java/sbnz/integracija/backend/facts/Meta.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../drools-spring-app/src/main/java/sbnz/integracija/backend/facts/MetaShift.java" beforeDir="false" afterPath="$PROJECT_DIR$/../drools-spring-app/src/main/java/sbnz/integracija/backend/facts/MetaShift.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../drools-spring-app/src/main/java/sbnz/integracija/backend/facts/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/../drools-spring-app/src/main/java/sbnz/integracija/backend/facts/User.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../drools-spring-app/src/main/java/sbnz/integracija/backend/service/CardService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../drools-spring-app/src/main/java/sbnz/integracija/backend/service/CardService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../drools-spring-app/src/main/resources/data.sql" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../drools-spring-app/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../drools-spring-app/target/classes/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../drools-spring-app/target/classes/sbnz/integracija/example/SampleApp.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../drools-spring-app/target/classes/sbnz/integracija/example/SampleAppController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../drools-spring-app/target/classes/sbnz/integracija/example/SampleAppService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../drools-spring-app/target/classes/sbnz/integracija/example/SampleHomeController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../drools-spring-app/target/classes/sbnz/integracija/example/facts/Item$Category.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../drools-spring-app/target/classes/sbnz/integracija/example/facts/Item.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../drools-spring-app/target/classes/static/views/index.html" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../drools-spring-app/target/drools-spring-app-0.0.1-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/../drools-spring-app/target/drools-spring-app-0.0.1-SNAPSHOT.jar" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../drools-spring-app/target/drools-spring-app-0.0.1-SNAPSHOT.jar.original" beforeDir="false" afterPath="$PROJECT_DIR$/../drools-spring-app/target/drools-spring-app-0.0.1-SNAPSHOT.jar.original" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../drools-spring-app/target/maven-archiver/pom.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../drools-spring-app/target/maven-archiver/pom.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../drools-spring-app/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/../drools-spring-app/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../drools-spring-app/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/../drools-spring-app/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../drools-spring-app/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/drools-spring-kjar.iml" beforeDir="false" afterPath="$PROJECT_DIR$/drools-spring-kjar.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/META-INF/kmodule.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/META-INF/kmodule.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/META-INF/kmodule.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/META-INF/kmodule.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/sbnz/integracija/classify-item-rules.drl" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/sbnz/integracija/rules2.drl" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/drools-spring-kjar-0.0.2-SNAPSHOT.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-archiver/pom.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-archiver/pom.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/../drools-spring-app/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/sbnz/integracija/matchHistoryRules/matchHistoryRules.drl" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/sbnz/integracija/matchHistoryRules/matchHistoryRules.drl" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -143,7 +86,7 @@
       <workItem from="1653353273942" duration="2031000" />
       <workItem from="1653369724214" duration="1983000" />
       <workItem from="1653975190150" duration="14209000" />
-      <workItem from="1655342141677" duration="13951000" />
+      <workItem from="1655342141677" duration="21557000" />
     </task>
     <servers />
   </component>
@@ -171,22 +114,22 @@
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="1060" y="455" key="FileChooserDialogImpl/0.0.2560.1400@0.0.2560.1400" timestamp="1653975571561" />
-    <state width="2517" height="401" key="GridCell.Tab.0.bottom" timestamp="1655618377841">
+    <state width="2517" height="401" key="GridCell.Tab.0.bottom" timestamp="1655658192368">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="2517" height="401" key="GridCell.Tab.0.bottom/0.0.2560.1400@0.0.2560.1400" timestamp="1655618377841" />
-    <state width="2517" height="401" key="GridCell.Tab.0.center" timestamp="1655618377841">
+    <state width="2517" height="401" key="GridCell.Tab.0.bottom/0.0.2560.1400@0.0.2560.1400" timestamp="1655658192368" />
+    <state width="2517" height="401" key="GridCell.Tab.0.center" timestamp="1655658192367">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="2517" height="401" key="GridCell.Tab.0.center/0.0.2560.1400@0.0.2560.1400" timestamp="1655618377841" />
-    <state width="2517" height="401" key="GridCell.Tab.0.left" timestamp="1655618377841">
+    <state width="2517" height="401" key="GridCell.Tab.0.center/0.0.2560.1400@0.0.2560.1400" timestamp="1655658192367" />
+    <state width="2517" height="401" key="GridCell.Tab.0.left" timestamp="1655658192367">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="2517" height="401" key="GridCell.Tab.0.left/0.0.2560.1400@0.0.2560.1400" timestamp="1655618377841" />
-    <state width="2517" height="401" key="GridCell.Tab.0.right" timestamp="1655618377841">
+    <state width="2517" height="401" key="GridCell.Tab.0.left/0.0.2560.1400@0.0.2560.1400" timestamp="1655658192367" />
+    <state width="2517" height="401" key="GridCell.Tab.0.right" timestamp="1655658192368">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="2517" height="401" key="GridCell.Tab.0.right/0.0.2560.1400@0.0.2560.1400" timestamp="1655618377841" />
+    <state width="2517" height="401" key="GridCell.Tab.0.right/0.0.2560.1400@0.0.2560.1400" timestamp="1655658192368" />
     <state x="760" y="274" key="SettingsEditor" timestamp="1653992665395">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
