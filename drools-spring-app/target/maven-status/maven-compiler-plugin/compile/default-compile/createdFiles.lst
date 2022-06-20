@@ -4,6 +4,7 @@ sbnz\integracija\backend\drools\EnemyHeroOrDeckCategoryCountAccumulateFunction.c
 sbnz\integracija\backend\facts\Hero.class
 sbnz\integracija\backend\facts\Deck.class
 sbnz\integracija\backend\facts\MetaRank.class
+sbnz\integracija\backend\drools\WinsAgainstThisHeroCountAccumulateFunction$WinsAgainstThisHeroCountAccumulateFunctionContext.class
 sbnz\integracija\backend\dto\MatchHistoryOutputDTO.class
 sbnz\integracija\backend\drools\KeyWithMaxValueInMapAccumulateFunction$KeyWithMaxValueInMapAccumulateFunctionContext.class
 sbnz\integracija\backend\facts\Match.class
@@ -14,6 +15,7 @@ sbnz\integracija\backend\controller\CardController.class
 sbnz\integracija\backend\facts\Meta.class
 sbnz\integracija\backend\facts\User.class
 sbnz\integracija\backend\drools\EnemyHeroOrDeckCategoryCountAccumulateFunction$EnemyHeroOrDeckCategoryCountAccumulateFunctionContext.class
+sbnz\integracija\backend\drools\WinsAgainstThisHeroCountAccumulateFunction.class
 sbnz\integracija\backend\facts\Card.class
 sbnz\integracija\backend\facts\MetaShift.class
 sbnz\integracija\backend\repository\MatchRepository.class
