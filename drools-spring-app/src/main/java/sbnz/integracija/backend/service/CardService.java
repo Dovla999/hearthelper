@@ -67,5 +67,6 @@ public class CardService {
 		kieSession.dispose();
 		System.out.println("lol " + dto.getHero().name());
 		System.out.println("lol2 " + dto.getCenterpieceCard().getName());
+		System.out.println("lol3 " + dto.getDeckCategory().name());
 	}
 }
