@@ -20,12 +20,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6ff4aaca-ef47-42c1-b013-69b34603101f" name="Default Changelist" comment="Most frequently played enemy centerpiece card converted to accumulate function class">
-      <change afterPath="$PROJECT_DIR$/../drools-spring-app/src/main/java/sbnz/integracija/backend/drools/WinsAgainstThisCenterpieceCardCountAccumulateFunction.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../drools-spring-app/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../drools-spring-app/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../drools-spring-app/target/drools-spring-app-0.0.1-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/../drools-spring-app/target/drools-spring-app-0.0.1-SNAPSHOT.jar" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../drools-spring-app/target/drools-spring-app-0.0.1-SNAPSHOT.jar.original" beforeDir="false" afterPath="$PROJECT_DIR$/../drools-spring-app/target/drools-spring-app-0.0.1-SNAPSHOT.jar.original" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../drools-spring-app/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/../drools-spring-app/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../drools-spring-app/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/../drools-spring-app/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/sbnz/integracija/matchHistoryRules/matchHistoryRules.drl" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/sbnz/integracija/matchHistoryRules/matchHistoryRules.drl" afterDir="false" />
     </list>
@@ -91,7 +88,7 @@
       <workItem from="1653353273942" duration="2031000" />
       <workItem from="1653369724214" duration="1983000" />
       <workItem from="1653975190150" duration="14209000" />
-      <workItem from="1655342141677" duration="44225000" />
+      <workItem from="1655342141677" duration="46040000" />
     </task>
     <task id="LOCAL-00001" summary="Hero recommendation forward chain implemented fully">
       <created>1655661879305</created>
@@ -147,22 +144,22 @@
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="1060" y="455" key="FileChooserDialogImpl/0.0.2560.1400@0.0.2560.1400" timestamp="1653975571561" />
-    <state width="2517" height="393" key="GridCell.Tab.0.bottom" timestamp="1655687512736">
+    <state width="2517" height="393" key="GridCell.Tab.0.bottom" timestamp="1655688997913">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="2517" height="393" key="GridCell.Tab.0.bottom/0.0.2560.1400@0.0.2560.1400" timestamp="1655687512736" />
-    <state width="2517" height="393" key="GridCell.Tab.0.center" timestamp="1655687512736">
+    <state width="2517" height="393" key="GridCell.Tab.0.bottom/0.0.2560.1400@0.0.2560.1400" timestamp="1655688997913" />
+    <state width="2517" height="393" key="GridCell.Tab.0.center" timestamp="1655688997913">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="2517" height="393" key="GridCell.Tab.0.center/0.0.2560.1400@0.0.2560.1400" timestamp="1655687512736" />
-    <state width="2517" height="393" key="GridCell.Tab.0.left" timestamp="1655687512736">
+    <state width="2517" height="393" key="GridCell.Tab.0.center/0.0.2560.1400@0.0.2560.1400" timestamp="1655688997913" />
+    <state width="2517" height="393" key="GridCell.Tab.0.left" timestamp="1655688997913">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="2517" height="393" key="GridCell.Tab.0.left/0.0.2560.1400@0.0.2560.1400" timestamp="1655687512736" />
-    <state width="2517" height="393" key="GridCell.Tab.0.right" timestamp="1655687512736">
+    <state width="2517" height="393" key="GridCell.Tab.0.left/0.0.2560.1400@0.0.2560.1400" timestamp="1655688997913" />
+    <state width="2517" height="393" key="GridCell.Tab.0.right" timestamp="1655688997913">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="2517" height="393" key="GridCell.Tab.0.right/0.0.2560.1400@0.0.2560.1400" timestamp="1655687512736" />
+    <state width="2517" height="393" key="GridCell.Tab.0.right/0.0.2560.1400@0.0.2560.1400" timestamp="1655688997913" />
     <state x="810" y="355" key="Maven.ArtifactSearchDialog" timestamp="1655676701089">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
