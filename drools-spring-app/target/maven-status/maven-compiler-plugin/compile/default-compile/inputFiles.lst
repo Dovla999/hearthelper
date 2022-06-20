@@ -8,6 +8,7 @@ F:\Fakultet\4. godina\2. semestar\SBZ\hearthelper\drools-spring-app\src\main\jav
 F:\Fakultet\4. godina\2. semestar\SBZ\hearthelper\drools-spring-app\src\main\java\sbnz\integracija\backend\facts\Hero.java
 F:\Fakultet\4. godina\2. semestar\SBZ\hearthelper\drools-spring-app\src\main\java\sbnz\integracija\backend\service\CardService.java
 F:\Fakultet\4. godina\2. semestar\SBZ\hearthelper\drools-spring-app\src\main\java\sbnz\integracija\backend\repository\MatchRepository.java
+F:\Fakultet\4. godina\2. semestar\SBZ\hearthelper\drools-spring-app\src\main\java\sbnz\integracija\backend\drools\WinsAgainstThisHeroCountAccumulateFunction.java
 F:\Fakultet\4. godina\2. semestar\SBZ\hearthelper\drools-spring-app\src\main\java\sbnz\integracija\backend\facts\MetaRank.java
 F:\Fakultet\4. godina\2. semestar\SBZ\hearthelper\drools-spring-app\src\main\java\sbnz\integracija\backend\facts\Deck.java
 F:\Fakultet\4. godina\2. semestar\SBZ\hearthelper\drools-spring-app\src\main\java\sbnz\integracija\backend\HearthApp.java
@@ -16,3 +17,4 @@ F:\Fakultet\4. godina\2. semestar\SBZ\hearthelper\drools-spring-app\src\main\jav
 F:\Fakultet\4. godina\2. semestar\SBZ\hearthelper\drools-spring-app\src\main\java\sbnz\integracija\backend\controller\SampleHomeController.java
 F:\Fakultet\4. godina\2. semestar\SBZ\hearthelper\drools-spring-app\src\main\java\sbnz\integracija\backend\facts\DeckCategory.java
 F:\Fakultet\4. godina\2. semestar\SBZ\hearthelper\drools-spring-app\src\main\java\sbnz\integracija\backend\facts\Card.java
+F:\Fakultet\4. godina\2. semestar\SBZ\hearthelper\drools-spring-app\src\main\java\sbnz\integracija\backend\drools\EnemyCenterpieceCardCountAccumulateFunction.java

@@ -20,11 +20,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7082e7cb-5fe4-470b-aa8b-0867b1acbbbb" name="Default Changelist" comment="First rule converted/generalized to accumulate function classes">
-      <change afterPath="$PROJECT_DIR$/src/main/java/sbnz/integracija/backend/drools/WinsAgainstThisHeroCountAccumulateFunction.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/sbnz/integracija/backend/drools/EnemyCenterpieceCardCountAccumulateFunction.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/drools-spring-app-0.0.1-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/target/drools-spring-app-0.0.1-SNAPSHOT.jar" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/drools-spring-app-0.0.1-SNAPSHOT.jar.original" beforeDir="false" afterPath="$PROJECT_DIR$/target/drools-spring-app-0.0.1-SNAPSHOT.jar.original" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../drools-spring-kjar/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../drools-spring-kjar/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../drools-spring-kjar/src/main/resources/sbnz/integracija/matchHistoryRules/matchHistoryRules.drl" beforeDir="false" afterPath="$PROJECT_DIR$/../drools-spring-kjar/src/main/resources/sbnz/integracija/matchHistoryRules/matchHistoryRules.drl" afterDir="false" />
     </list>
@@ -122,7 +123,7 @@
       <workItem from="1653353306395" duration="1996000" />
       <workItem from="1653369764588" duration="5957000" />
       <workItem from="1653975577701" duration="12693000" />
-      <workItem from="1655342141071" duration="35862000" />
+      <workItem from="1655342141071" duration="37387000" />
     </task>
     <task id="LOCAL-00001" summary="gitignore">
       <created>1655619496163</created>
@@ -194,22 +195,22 @@
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="1060" y="454" key="FileChooserDialogImpl/0.0.2560.1400@0.0.2560.1400" timestamp="1653978284629" />
-    <state width="2517" height="498" key="GridCell.Tab.0.bottom" timestamp="1655684293033">
+    <state width="2517" height="498" key="GridCell.Tab.0.bottom" timestamp="1655685590879">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="2517" height="498" key="GridCell.Tab.0.bottom/0.0.2560.1400@0.0.2560.1400" timestamp="1655684293033" />
-    <state width="2517" height="498" key="GridCell.Tab.0.center" timestamp="1655684293033">
+    <state width="2517" height="498" key="GridCell.Tab.0.bottom/0.0.2560.1400@0.0.2560.1400" timestamp="1655685590879" />
+    <state width="2517" height="498" key="GridCell.Tab.0.center" timestamp="1655685590877">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="2517" height="498" key="GridCell.Tab.0.center/0.0.2560.1400@0.0.2560.1400" timestamp="1655684293033" />
-    <state width="2517" height="498" key="GridCell.Tab.0.left" timestamp="1655684293033">
+    <state width="2517" height="498" key="GridCell.Tab.0.center/0.0.2560.1400@0.0.2560.1400" timestamp="1655685590877" />
+    <state width="2517" height="498" key="GridCell.Tab.0.left" timestamp="1655685590876">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="2517" height="498" key="GridCell.Tab.0.left/0.0.2560.1400@0.0.2560.1400" timestamp="1655684293033" />
-    <state width="2517" height="498" key="GridCell.Tab.0.right" timestamp="1655684293033">
+    <state width="2517" height="498" key="GridCell.Tab.0.left/0.0.2560.1400@0.0.2560.1400" timestamp="1655685590876" />
+    <state width="2517" height="498" key="GridCell.Tab.0.right" timestamp="1655685590879">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="2517" height="498" key="GridCell.Tab.0.right/0.0.2560.1400@0.0.2560.1400" timestamp="1655684293033" />
+    <state width="2517" height="498" key="GridCell.Tab.0.right/0.0.2560.1400@0.0.2560.1400" timestamp="1655685590879" />
     <state width="2517" height="475" key="GridCell.Tab.1.bottom" timestamp="1655618140018">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>

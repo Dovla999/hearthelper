@@ -2,11 +2,12 @@ package sbnz.integracija;
 
 import sbnz.integracija.backend.facts.*;
 import sbnz.integracija.backend.dto.*;
-import java.util.*;
+import java.util.*
 
 import accumulate sbnz.integracija.backend.drools.EnemyHeroOrDeckCategoryCountAccumulateFunction enemyHeroOrDeckCategoryCountAccumulateFunction;
 import accumulate sbnz.integracija.backend.drools.KeyWithMaxValueInMapAccumulateFunction keyWithMaxValueInMapAccumulateFunction;
 import accumulate sbnz.integracija.backend.drools.WinsAgainstThisHeroCountAccumulateFunction winsAgainstThisHeroCountAccumulateFunction;
+import accumulate sbnz.integracija.backend.drools.EnemyCenterpieceCardCountAccumulateFunction enemyCenterpieceCardCountAccumulateFunction;
 
 function boolean debug(String x) {
     System.out.println("lhs_debug(): "+x);
@@ -82,33 +83,43 @@ end
 
 rule "Most frequently played enemy centerpiece card"
     salience 3
+    dialect "mvel"
     when
         $u: User( $pmh: personalMatchHistory )
-        $countMap: Map() from accumulate(
+//        $countMap: Map() from accumulate(
+//            Match( $enemyCards: cardsPlayedSecondPlayer ) from $pmh,
+//            init( Map enemyCenterpieceCount = new HashMap(); ),
+//            action( for (Card card : (List<Card>)$enemyCards) {
+//                        if (card.getCenterpiece()) {
+//                            if (enemyCenterpieceCount.containsKey(card)) enemyCenterpieceCount.put(card, ((Integer)enemyCenterpieceCount.get(card)) + 1);
+//                            else enemyCenterpieceCount.put(card, 1);
+//                        }
+//                    } ),
+//            result( enemyCenterpieceCount )
+//        )
+        accumulate(
             Match( $enemyCards: cardsPlayedSecondPlayer ) from $pmh,
-            init( Map enemyCenterpieceCount = new HashMap(); ),
-            action( for (Card card : (List<Card>)$enemyCards) {
-                        if (card.getCenterpiece()) {
-                            if (enemyCenterpieceCount.containsKey(card)) enemyCenterpieceCount.put(card, ((Integer)enemyCenterpieceCount.get(card)) + 1);
-                            else enemyCenterpieceCount.put(card, 1);
-                        }
-                    } ),
-            result( enemyCenterpieceCount )
+            $countMap: enemyCenterpieceCardCountAccumulateFunction( $enemyCards )
         )
-        $mostFreq: Card() from accumulate(
+//        $mostFreq: Card() from accumulate(
+//            Map.Entry( $key: key, $val: value ) from $countMap.entrySet(),
+//            init( Card mostFrequent = null; ),
+//            action( if (mostFrequent == null || ((Integer)$val) > ((Integer)$countMap.get(mostFrequent))) mostFrequent = (Card)$key; /*System.out.println(((Card)$key).getName() + " freq: " + ((Integer)$val));*/ ),
+//            result( mostFrequent )
+//        )
+        accumulate(
             Map.Entry( $key: key, $val: value ) from $countMap.entrySet(),
-            init( Card mostFrequent = null; ),
-            action( if (mostFrequent == null || ((Integer)$val) > ((Integer)$countMap.get(mostFrequent))) mostFrequent = (Card)$key; /*System.out.println(((Card)$key).getName() + " freq: " + ((Integer)$val));*/ ),
-            result( mostFrequent )
+            $mostFreq: keyWithMaxValueInMapAccumulateFunction( ["key" : (Object)$key, "val" : (Object)$val, "map" : (Object)$countMap] )
         )
     then
-        System.out.println("Konacno: " + $mostFreq.getName());
+        System.out.println("Konacno: " + ((Card) $mostFreq).getName());
         System.out.println("HURAAA CENTERPIECE!");
         insert( $mostFreq );
 end
 
 rule "Most successful opposing centerpiece card (all matches in knowledge base taken into account)"
     salience 2
+//    dialect "mvel"
     when
         $mostFreqCenterpiece: Card()
         $winsAgainstThisCard: Map() from accumulate(
