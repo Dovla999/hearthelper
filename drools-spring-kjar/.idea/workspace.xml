@@ -19,8 +19,8 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6ff4aaca-ef47-42c1-b013-69b34603101f" name="Default Changelist" comment="Second rule's accumulate function converted to class">
-      <change afterPath="$PROJECT_DIR$/../drools-spring-app/src/main/java/sbnz/integracija/backend/drools/EnemyCenterpieceCardCountAccumulateFunction.java" afterDir="false" />
+    <list default="true" id="6ff4aaca-ef47-42c1-b013-69b34603101f" name="Default Changelist" comment="Most frequently played enemy centerpiece card converted to accumulate function class">
+      <change afterPath="$PROJECT_DIR$/../drools-spring-app/src/main/java/sbnz/integracija/backend/drools/WinsAgainstThisCenterpieceCardCountAccumulateFunction.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../drools-spring-app/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../drools-spring-app/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../drools-spring-app/target/drools-spring-app-0.0.1-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/../drools-spring-app/target/drools-spring-app-0.0.1-SNAPSHOT.jar" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../drools-spring-app/target/drools-spring-app-0.0.1-SNAPSHOT.jar.original" beforeDir="false" afterPath="$PROJECT_DIR$/../drools-spring-app/target/drools-spring-app-0.0.1-SNAPSHOT.jar.original" afterDir="false" />
@@ -91,7 +91,7 @@
       <workItem from="1653353273942" duration="2031000" />
       <workItem from="1653369724214" duration="1983000" />
       <workItem from="1653975190150" duration="14209000" />
-      <workItem from="1655342141677" duration="42643000" />
+      <workItem from="1655342141677" duration="44225000" />
     </task>
     <task id="LOCAL-00001" summary="Hero recommendation forward chain implemented fully">
       <created>1655661879305</created>
@@ -107,7 +107,14 @@
       <option name="project" value="LOCAL" />
       <updated>1655684423669</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Most frequently played enemy centerpiece card converted to accumulate function class">
+      <created>1655686027763</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1655686027763</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -128,7 +135,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Hero recommendation forward chain implemented fully" />
     <MESSAGE value="Second rule's accumulate function converted to class" />
-    <option name="LAST_COMMIT_MESSAGE" value="Second rule's accumulate function converted to class" />
+    <MESSAGE value="Most frequently played enemy centerpiece card converted to accumulate function class" />
+    <option name="LAST_COMMIT_MESSAGE" value="Most frequently played enemy centerpiece card converted to accumulate function class" />
   </component>
   <component name="WindowStateProjectService">
     <state x="760" y="274" key="#Project_Structure" timestamp="1653977921076">
@@ -139,22 +147,22 @@
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="1060" y="455" key="FileChooserDialogImpl/0.0.2560.1400@0.0.2560.1400" timestamp="1653975571561" />
-    <state width="2517" height="393" key="GridCell.Tab.0.bottom" timestamp="1655685875226">
+    <state width="2517" height="393" key="GridCell.Tab.0.bottom" timestamp="1655687512736">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="2517" height="393" key="GridCell.Tab.0.bottom/0.0.2560.1400@0.0.2560.1400" timestamp="1655685875226" />
-    <state width="2517" height="393" key="GridCell.Tab.0.center" timestamp="1655685875226">
+    <state width="2517" height="393" key="GridCell.Tab.0.bottom/0.0.2560.1400@0.0.2560.1400" timestamp="1655687512736" />
+    <state width="2517" height="393" key="GridCell.Tab.0.center" timestamp="1655687512736">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="2517" height="393" key="GridCell.Tab.0.center/0.0.2560.1400@0.0.2560.1400" timestamp="1655685875226" />
-    <state width="2517" height="393" key="GridCell.Tab.0.left" timestamp="1655685875226">
+    <state width="2517" height="393" key="GridCell.Tab.0.center/0.0.2560.1400@0.0.2560.1400" timestamp="1655687512736" />
+    <state width="2517" height="393" key="GridCell.Tab.0.left" timestamp="1655687512736">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="2517" height="393" key="GridCell.Tab.0.left/0.0.2560.1400@0.0.2560.1400" timestamp="1655685875226" />
-    <state width="2517" height="393" key="GridCell.Tab.0.right" timestamp="1655685875226">
+    <state width="2517" height="393" key="GridCell.Tab.0.left/0.0.2560.1400@0.0.2560.1400" timestamp="1655687512736" />
+    <state width="2517" height="393" key="GridCell.Tab.0.right" timestamp="1655687512736">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="2517" height="393" key="GridCell.Tab.0.right/0.0.2560.1400@0.0.2560.1400" timestamp="1655685875226" />
+    <state width="2517" height="393" key="GridCell.Tab.0.right/0.0.2560.1400@0.0.2560.1400" timestamp="1655687512736" />
     <state x="810" y="355" key="Maven.ArtifactSearchDialog" timestamp="1655676701089">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>

@@ -12,10 +12,12 @@ sbnz\integracija\backend\facts\Meta.class
 sbnz\integracija\backend\facts\User.class
 sbnz\integracija\backend\facts\MetaShift.class
 sbnz\integracija\backend\facts\DeckCategory.class
+sbnz\integracija\backend\drools\WinsAgainstThisCenterpieceCardCountAccumulateFunction$WinsAgainstThisCenterpieceCardCountAccumulateFunctionContext.class
 sbnz\integracija\backend\drools\EnemyCenterpieceCardCountAccumulateFunction.class
 sbnz\integracija\backend\controller\SampleHomeController.class
 sbnz\integracija\backend\facts\Deck.class
 sbnz\integracija\backend\dto\MatchHistoryOutputDTO.class
+sbnz\integracija\backend\drools\WinsAgainstThisCenterpieceCardCountAccumulateFunction.class
 sbnz\integracija\backend\drools\KeyWithMaxValueInMapAccumulateFunction.class
 sbnz\integracija\backend\HearthApp.class
 sbnz\integracija\backend\drools\EnemyHeroOrDeckCategoryCountAccumulateFunction$EnemyHeroOrDeckCategoryCountAccumulateFunctionContext.class
