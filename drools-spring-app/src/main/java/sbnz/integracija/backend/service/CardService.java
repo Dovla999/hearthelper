@@ -44,14 +44,11 @@ public class CardService {
 		return card;
 	}
 
-	@EventListener(ApplicationReadyEvent.class)
-	public void doSomethingAfterStartup() {
+//	@EventListener(ApplicationReadyEvent.class)
+	public MatchHistoryOutputDTO matchHistoryForwardChain() {
 		KieSession kieSession = kieContainer.newKieSession("matchHistoryRulesSession");
 
 		User user = userRepository.findAll().get(0);
-//		for (Match m : user.getPersonalMatchHistory()) {
-//			System.out.println(m.getSecondPlayer().name());
-//		}
 		kieSession.insert(user);
 		for (Match m : matchRepository.findAll()) {
 			kieSession.insert(m);
@@ -65,8 +62,10 @@ public class CardService {
 		int fired = kieSession.fireAllRules();
 		System.out.println("Number of Rules executed = " + fired);
 		kieSession.dispose();
-		System.out.println("lol " + dto.getHero().name());
-		System.out.println("lol2 " + dto.getCenterpieceCard().getName());
-		System.out.println("lol3 " + dto.getDeckCategory().name());
+		System.out.println("Best hero: " + dto.getHero().name());
+		System.out.println("Best centerpiece: " + dto.getCenterpieceCard().getName());
+		System.out.println("Best deck category: " + dto.getDeckCategory().name());
+
+		return dto;
 	}
 }

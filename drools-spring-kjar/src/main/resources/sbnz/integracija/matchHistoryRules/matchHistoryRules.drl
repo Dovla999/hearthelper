@@ -16,7 +16,7 @@ function boolean debug(String x) {
     return true;
 }
 
-rule "Most frequent enemy hero, centerpiece card and deck category"
+rule "Most frequent enemy hero, centerpiece card and deck category (from matches in user's match history)"
     salience 3
     dialect "mvel"
     when
