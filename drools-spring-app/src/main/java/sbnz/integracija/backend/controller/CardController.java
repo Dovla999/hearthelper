@@ -37,5 +37,16 @@ public class CardController {
 
 		return new ResponseEntity<>(dto, HttpStatus.OK);
 	}
+	@GetMapping(value = "/owned-cards", produces = MediaType.APPLICATION_JSON_VALUE)
+	public ResponseEntity<MatchHistoryOutputDTO> getOwnedCardsForwardChainOutput() {
+		MatchHistoryOutputDTO dto;
+//		try {
+			dto = this.cardService.ownedCardsChainOutput();
+//		} catch (Exception e) {
+//			throw new ResponseStatusException(HttpStatus.NOT_FOUND, e.getMessage(), e);
+//		}
+
+		return new ResponseEntity<>(dto, HttpStatus.OK);
+	}
 	
 }

@@ -14,6 +14,8 @@ import sbnz.integracija.backend.facts.Card;
 import sbnz.integracija.backend.facts.Hero;
 import sbnz.integracija.backend.facts.Match;
 import sbnz.integracija.backend.facts.User;
+import sbnz.integracija.backend.repository.CardRepository;
+import sbnz.integracija.backend.repository.DeckRepository;
 import sbnz.integracija.backend.repository.MatchRepository;
 import sbnz.integracija.backend.repository.UserRepository;
 
@@ -29,6 +31,12 @@ public class CardService {
 
 	@Autowired
 	private MatchRepository matchRepository;
+
+	@Autowired
+	private CardRepository cardRepository;
+	@Autowired
+	private DeckRepository deckRepository;
+
 
 	@Autowired
 	public CardService(KieContainer kieContainer) {
@@ -57,6 +65,25 @@ public class CardService {
 //			if (m.getFirstPlayer() == Hero.DRUID && m.getSecondPlayer() == Hero.SHAMAN)
 //				System.out.println("First: DRUID || Second: SHAMAN || First won: " + m.getFirstPlayerWon());
 		}
+		MatchHistoryOutputDTO dto = new MatchHistoryOutputDTO();
+		kieSession.insert(dto);
+		int fired = kieSession.fireAllRules();
+		System.out.println("Number of Rules executed = " + fired);
+		kieSession.dispose();
+		System.out.println("Best hero: " + dto.getHero().name());
+		System.out.println("Best centerpiece: " + dto.getCenterpieceCard().getName());
+		System.out.println("Best deck category: " + dto.getDeckCategory().name());
+
+		return dto;
+	}
+
+	public MatchHistoryOutputDTO ownedCardsChainOutput() {
+		KieSession kieSession = kieContainer.newKieSession("ownedCardsRulesSession");
+
+		User user = userRepository.findAll().get(0);
+		kieSession.insert(user);
+		deckRepository.findAll().forEach(kieSession::insert);
+		cardRepository.findAll().forEach(kieSession::insert);
 		MatchHistoryOutputDTO dto = new MatchHistoryOutputDTO();
 		kieSession.insert(dto);
 		int fired = kieSession.fireAllRules();

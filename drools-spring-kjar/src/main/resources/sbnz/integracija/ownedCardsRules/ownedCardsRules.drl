@@ -1,0 +1,79 @@
+package sbnz.integracija;
+
+import sbnz.integracija.backend.facts.*;
+import sbnz.integracija.backend.dto.*;
+import java.util.*
+
+import accumulate sbnz.integracija.backend.drools.HeroClassWithMostCardsAccumulateFunction heroClassWithMostCardsAccumulateFunction;
+import accumulate sbnz.integracija.backend.drools.DecksContainingTheMostCardsForClassAccumulateFunction decksContainingTheMostCardsForClassAccumulateFunction;
+import accumulate sbnz.integracija.backend.drools.CenterpieceCardTheMostDecksCategoryHeroAccumulateFunction centerpieceCardTheMostDecksCategoryHeroAccumulateFunction;
+import accumulate sbnz.integracija.backend.drools.KeyWithMaxValueInMapAccumulateFunction keyWithMaxValueInMapAccumulateFunction;
+
+function boolean debug(String x) {
+    System.out.println("lhs_debug(): "+x);
+    return true;
+}
+
+
+rule "Class with most owned cards in user's personal card collection"
+    salience 10
+    dialect "mvel"
+    when
+        $u: User( $co: cardsOwned )
+        accumulate(
+            Card( $hero: cardClass) from $co,
+            $countMapHero: heroClassWithMostCardsAccumulateFunction( $hero )
+        )
+        accumulate(
+            Map.Entry( $key: key, $val: value ) from $countMapHero.entrySet(),
+            $mostFreqHero: keyWithMaxValueInMapAccumulateFunction( ["key" : (Object)$key, "val" : (Object)$val, "map" : (Object)$countMapHero] )
+        )
+    then
+        insert( $mostFreqHero );
+end
+
+
+
+rule "Deck category containing the most cards for the most frequent class"
+    salience 8
+    dialect "mvel"
+    when
+        $mostFreqHero: Hero()
+        $u: User( $co: cardsOwned )
+        accumulate(
+            Deck( $deckHero: deckHero, $cardQuantity: cardQuantity, $deck: this),
+            $decksContainngTheMostCards: decksContainingTheMostCardsForClassAccumulateFunction(
+                ["deckHero" : (Object)$deckHero, "cardsOwned" : (Object)$co, "cardQuantity":(Object)$cardQuantity, "mostFreqHero":(Object)$mostFreqHero, "deck":(Object)$deck ]
+            )
+        )
+        accumulate(
+            Map.Entry( $key: key, $val: value ) from $decksContainngTheMostCards.entrySet(),
+            $mostFreqCategory: keyWithMaxValueInMapAccumulateFunction( ["key" : (Object)$key, "val" : (Object)$val, "map" : (Object)$decksContainngTheMostCards] )
+        )
+    then
+        insert( $mostFreqCategory );
+end
+
+rule "Centerpiece card for the most frequent class and category"
+    salience 6
+    dialect "mvel"
+    when
+        $mostFreqHero: Hero()
+        $mostFreqCategory: DeckCategory()
+        $u: User( $co: cardsOwned )
+        accumulate(
+            Deck( $deckHero: deckHero, $deckCategory: category, $cardQuantity: cardQuantity, $deck: this),
+            $centerpieceCardMap: centerpieceCardTheMostDecksCategoryHeroAccumulateFunction(
+                ["deckHero" : (Object)$deckHero, "cardsOwned" : (Object)$co, "mostFreqCategory":(Object)$mostFreqCategory, "mostFreqHero":(Object)$mostFreqHero, "deck":(Object)$deck ]
+            )
+        )
+        accumulate(
+            Map.Entry( $key: key, $val: value ) from $centerpieceCardMap.entrySet(),
+            $mostFreqCenterpieceCard: keyWithMaxValueInMapAccumulateFunction( ["key" : (Object)$key, "val" : (Object)$val, "map" : (Object)$centerpieceCardMap ] )
+        )
+        $output: MatchHistoryOutputDTO()
+    then
+        $output.setHero((Hero) $mostFreqHero);
+        $output.setCenterpieceCard((Card) $mostFreqCenterpieceCard);
+        $output.setDeckCategory((DeckCategory) $mostFreqCategory);
+end
