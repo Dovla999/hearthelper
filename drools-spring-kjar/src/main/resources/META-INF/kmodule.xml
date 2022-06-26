@@ -6,4 +6,8 @@
 		<ksession name="matchHistoryRulesSession" type="stateful"/>
 	</kbase>
 
+	<kbase name="ownedCardsRules" packages="sbnz.integracija.ownedCardsRules">
+		<ksession name="ownedCardsRulesSession" type="stateful"/>
+	</kbase>
+
 </kmodule>
