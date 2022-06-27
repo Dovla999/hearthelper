@@ -96,7 +96,8 @@
 </script>
 
 <div>
-	<button class="btn btn-primary" on:click={switchInput}
+	<div style="margin-bottom: 10px;">
+	<button class="btn btn-primary" on:click={switchInput} style="width: 300px;"
 		>{manual_input ? 'Manual input' : 'Recommended input'}</button
 	>
 	<button
@@ -114,19 +115,30 @@
 	>
 		Recommend input from owned cards
 	</button>
+	</div>
 
-	<div class="recommended-inputs" style:visibility={!manual_input ? 'visible' : 'hidden'}>
-		<input bind:value={recommendBody.hero} disabled placeholder="Hero" />
-		<input bind:value={recommendBody.deckCategory} disabled placeholder="Deck category" />
+	<div class="recommended-inputs" style:visibility={!manual_input ? 'visible' : 'hidden'} >
+		<div>
+			<label class="option-font-style">Recommended options:</label>
+		</div>
+		<div>
+		<input bind:value={recommendBody.hero} disabled placeholder="Hero" class="option-font-style"/>
+		<input bind:value={recommendBody.deckCategory} disabled placeholder="Deck category" class="option-font-style"/>
 		<input
 			bind:value={recommendBody.centerpieceCard.name}
 			disabled
 			placeholder="Centerpiece card"
+			class="option-font-style"
 		/>
+		</div>
 	</div>
 
 	<div class="container" style:visibility={manual_input ? 'visible' : 'hidden'}>
 		<div class="heroes">
+			<div>
+				<label class="option-font-style" style="font-size: 20px; color:goldenrod;">Pick the heroes:</label>
+			</div>
+			<div>
 			{#each heroes as hero}
 				<input
 					bind:checked={checked_heroes[hero]}
@@ -137,10 +149,15 @@
 					name={hero}
 					value={hero}
 				/>
-				<label for={hero}> {hero}</label><br />
+				<label for={hero} class="option-font-style"> {hero}</label><br />
 			{/each}
+			</div>
 		</div>
 		<div class="types">
+			<div>
+				<label class="option-font-style" style="font-size: 20px; color:goldenrod;">Pick the categories:</label>
+			</div>
+			<div>
 			{#each deck_categories as deck_category}
 				<input
 					bind:checked={checked_deck_types[deck_category]}
@@ -154,10 +171,15 @@
 					name={deck_category}
 					value={deck_category}
 				/>
-				<label for={deck_category}> {deck_category}</label><br />
+				<label for={deck_category} class="option-font-style"> {deck_category}</label><br />
 			{/each}
+			</div>
 		</div>
-		<div class="cp-cards" use:slimscroll>
+		<div class="cp-cards" use:slimscroll >
+			<div>
+				<label class="option-font-style" style="font-size: 20px; color:goldenrod;">Pick the centerpieces:</label>
+			</div>
+			<div>
 			{#each centerpiece_cards as centerpiece_card}
 				<input
 					bind:checked={checked_cards[centerpiece_card.id]}
@@ -171,40 +193,43 @@
 					name={centerpiece_card.name}
 					value={centerpiece_card.name}
 				/>
-				<label for={centerpiece_card.name}> {centerpiece_card.name}</label><br />
+				<label for={centerpiece_card.name} class="option-font-style"> {centerpiece_card.name}</label><br />
 			{/each}
+			</div>
 		</div>
 		<br />
 	</div>
 
-	<div class="container-down">
+	<div class="container-down" style="margin-top: 10px;">
 		<div class="meta-rank">
+			<label class="option-font-style">Choose your ranking:</label>
 			<select bind:value={post_data.meta_rank} placeholder="Meta ranks">
 				{#each meta_ranks as meta_rank}
-					<option value={meta_rank}>{meta_rank}</option>
+					<option value={meta_rank}>{meta_rank.split('_')[2] + (meta_rank.split('_')[1] === "LEGEND" ? " LEGEND ELO" : ' to ' + meta_rank.split('_')[1])}</option>
 				{/each}
 			</select>
 		</div>
 
-		<button class=" recommend-deck btn btn-primary" on:click={recommendDeck}>Recommend deck</button>
+		<button class=" recommend-deck btn btn-primary" on:click={recommendDeck} style="width: 200px;">Recommend deck</button>
 	</div>
 
 	<div class="container-deck">
-		<div class="deck-name">{recommended_deck.name}</div>
-		<div class="deck-content">
+		<div class="deck-name">{"Deck found: " + recommended_deck.name}</div>
+		<div class="deck-content" style="height:200px;overflow:auto;">
 			<table class="table">
 				<thead>
 					<tr>
-						<th>Card name</th>
-						<th>Card count</th>
+						<th class="option-font-style">Card name x amount</th>
 					</tr>
 				</thead>
 				<tbody>
 					{#each Object.keys(recommended_deck.cards) as card}
-						<tr>
-							<td>{card}</td>
-							<td>{recommended_deck.cards[card]}</td>
-						</tr>
+						<div class="card">
+							
+								<label class="option-font-style" style="color:aqua;"
+								>{card + "   x " + recommended_deck.cards[card]}</label>
+							
+						</div>
 					{/each}
 				</tbody>
 			</table>
@@ -220,6 +245,8 @@
 		gap: 0px 0px;
 		grid-auto-flow: row;
 		grid-template-areas: 'heroes types cp-cards';
+		background-image: url("./options-bg.jpg");
+		background-size: cover;
 	}
 
 	.heroes {
@@ -240,7 +267,7 @@
 		grid-template-rows: 1fr;
 		gap: 0px 0px;
 		grid-auto-flow: row;
-		grid-template-areas: 'meta-rank recommend-deck recommend-deck ';
+		grid-template-areas: 'meta-rank a o recommend-deck ';
 	}
 
 	.meta-rank {
@@ -265,15 +292,41 @@
 		grid-template-areas:
 			'deck-name'
 			'deck-content';
+		width: 50%;
 	}
 
 	.deck-name {
 		grid-area: deck-name;
 		margin: 0 auto;
-		font-weight: bolder;
+		font-weight: bold;
+		font-size: 30px;
+		color: aliceblue;
 	}
 
 	.deck-content {
 		grid-area: deck-content;
 	}
+
+	.option-font-style{
+		font-weight: bold;
+		color: aliceblue;
+	}
+
+	.card {
+  /* Add shadows to create the "card" effect */
+	box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+	transition: 0.3s;
+	margin-top: 10px;
+	margin-bottom: 10px;
+	background-image: url("./card-bg.jpg");
+	background-size: cover;
+	font-style: italic;
+	font-size: 20px;
+	}
+
+	/* On mouse-over, add a deeper shadow */
+	.card:hover {
+	box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+	}
+	
 </style>
