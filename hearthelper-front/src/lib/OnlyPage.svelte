@@ -84,6 +84,8 @@
 		const deck = await res.json();
 		recommended_deck.name = deck.name;
 		recommended_deck.cards = deck.cards;
+		if(deck.name == null)
+		recommended_deck.name = "None found, please try again!";
 	}
 
 	function switchInput() {

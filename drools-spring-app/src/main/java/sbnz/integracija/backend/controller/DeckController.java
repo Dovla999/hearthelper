@@ -41,10 +41,12 @@ public class DeckController {
         }
         DeckDTO deckDTO = new DeckDTO();
         deckDTO.setCards(new HashMap<>());
-        for(Map.Entry<Card, Integer> cardQuant:dto.getDeck().getCardQuantity().entrySet()){
-            deckDTO.getCards().put(cardQuant.getKey().getName(), cardQuant.getValue());
+        if(dto.getDeck()!=null) {
+            for (Map.Entry<Card, Integer> cardQuant : dto.getDeck().getCardQuantity().entrySet()) {
+                deckDTO.getCards().put(cardQuant.getKey().getName(), cardQuant.getValue());
+            }
+            deckDTO.setName(dto.getDeck().getName());
         }
-        deckDTO.setName(dto.getDeck().getName());
         return new ResponseEntity<>(deckDTO, HttpStatus.OK);
     }
 }

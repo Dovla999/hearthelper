@@ -91,7 +91,7 @@ public class DeckService {
         System.out.println("Number of Rules executed = " + fired);
         kieSession.dispose();
         //System.out.println(deckRepository.findAll().size());
-        System.out.println(deckResultDTO.getDeck().getName());
+        //System.out.println(deckResultDTO.getDeck().getName());
         return deckResultDTO;
     }
 }
