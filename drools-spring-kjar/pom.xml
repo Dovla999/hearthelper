@@ -33,6 +33,7 @@
           <include>META-INF/kmodule.xml</include>
           <include>sbnz/integracija/matchHistoryRules/matchHistoryRules.drl</include>
           <include>sbnz/integracija/deckRecommendingRules/deckRecommendingRules.drl</include>
+          <include>sbnz/integracija/ownedCardsRules/ownedCardsRules.drl</include>
         </includes>
         <targetPath>.</targetPath>
       </resource>

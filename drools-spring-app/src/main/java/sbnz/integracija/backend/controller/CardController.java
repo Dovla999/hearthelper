@@ -37,5 +37,37 @@ public class CardController {
 
 		return new ResponseEntity<>(dto, HttpStatus.OK);
 	}
+	@GetMapping(value = "/owned-cards", produces = MediaType.APPLICATION_JSON_VALUE)
+	public ResponseEntity<MatchHistoryOutputDTO> getOwnedCardsForwardChainOutput() {
+		MatchHistoryOutputDTO dto;
+		try {
+			dto = this.cardService.ownedCardsChainOutput();
+		} catch (Exception e) {
+			throw new ResponseStatusException(HttpStatus.NOT_FOUND, e.getMessage(), e);
+		}
+
+		return new ResponseEntity<>(dto, HttpStatus.OK);
+	}
+	@GetMapping(value = "/heroes", produces = MediaType.APPLICATION_JSON_VALUE)
+	public ResponseEntity<?> getAllHeroes() {
+		return new ResponseEntity<>(this.cardService.getAllHeroes(), HttpStatus.OK);
+	}
+	@GetMapping(value = "/deck-categories", produces = MediaType.APPLICATION_JSON_VALUE)
+	public ResponseEntity<?> getAllDeckCategories() {
+		return new ResponseEntity<>(this.cardService.getAllDeckCategories(), HttpStatus.OK);
+	}
+	@GetMapping(value = "/centerpiece-cards", produces = MediaType.APPLICATION_JSON_VALUE)
+	public ResponseEntity<?> getAllCenterpieceCards() {
+		return new ResponseEntity<>(this.cardService.getAllCenterpieceCards(), HttpStatus.OK);
+	}
+	@GetMapping(value = "/meta-ranks", produces = MediaType.APPLICATION_JSON_VALUE)
+	public ResponseEntity<?> getAllMetaRanks() {
+		return new ResponseEntity<>(this.cardService.getAllMetaRanks(), HttpStatus.OK);
+	}
+	@GetMapping(value = "/sample-deck", produces = MediaType.APPLICATION_JSON_VALUE)
+	public ResponseEntity<?> getSampleDeck() {
+		return new ResponseEntity<>(this.cardService.getSampleDeck(), HttpStatus.OK);
+	}
+
 	
 }
