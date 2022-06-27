@@ -10,7 +10,7 @@ import java.util.List;
 public class DeckRecommendationPostDataDTO {
     public List<Hero> heroes;
     public List<DeckCategory> deck_categories;
-    public  List<Card> centerpiece_cards;
+    public  List<Integer> centerpiece_cards;
     public MetaRank meta_rank;
 
     public List<Hero> getHeroes() {
@@ -29,11 +29,11 @@ public class DeckRecommendationPostDataDTO {
         this.deck_categories = deck_categories;
     }
 
-    public List<Card> getCenterpiece_cards() {
+    public List<Integer> getCenterpiece_cards() {
         return centerpiece_cards;
     }
 
-    public void setCenterpiece_cards(List<Card> centerpiece_cards) {
+    public void setCenterpiece_cards(List<Integer> centerpiece_cards) {
         this.centerpiece_cards = centerpiece_cards;
     }
 
@@ -45,7 +45,7 @@ public class DeckRecommendationPostDataDTO {
         this.meta_rank = meta_rank;
     }
 
-    public DeckRecommendationPostDataDTO(List<Hero> heroes, List<DeckCategory> deck_categories, List<Card> centerpiece_cards, MetaRank meta_rank) {
+    public DeckRecommendationPostDataDTO(List<Hero> heroes, List<DeckCategory> deck_categories, List<Integer> centerpiece_cards, MetaRank meta_rank) {
         this.heroes = heroes;
         this.deck_categories = deck_categories;
         this.centerpiece_cards = centerpiece_cards;

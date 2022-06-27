@@ -46,7 +46,7 @@ public class DeckService {
         return (int) ((Math.random() * (max - min)) + min);
     }
 
-    public DeckResultDTO recommendDeckForwardChain(MetaRank metaRank, List<DeckCategory> categories, List<Hero> heroes, List<Card> centerpieces ){
+    public DeckResultDTO recommendDeckForwardChain(MetaRank metaRank, List<DeckCategory> categories, List<Hero> heroes, List<Integer> centerpieces ){
         //fire chain
         /*
         centerpieces = new ArrayList<>();
@@ -64,6 +64,10 @@ public class DeckService {
         categories.add(DeckCategory.AGGRO);
         categories.add(DeckCategory.ATTRITION);
         */
+        List<Card> cp = new ArrayList<>();
+        for(Integer id: centerpieces){
+            cp.add(cardRepository.findById(Long.valueOf(id)).get());
+        }
 
         KieSession kieSession = kieContainer.newKieSession("deckRecommendingRulesSession");
         kieSession.setGlobal("deckw", new HashMap<>());
@@ -78,7 +82,7 @@ public class DeckService {
         for(Hero hero:heroes){
             kieSession.insert(hero);
         }
-        for(Card centerpiece:centerpieces){
+        for(Card centerpiece:cp){
             kieSession.insert(centerpiece);
         }
         DeckResultDTO deckResultDTO = new DeckResultDTO();

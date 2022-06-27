@@ -68,7 +68,9 @@
 		recommendBody = await res.json();
 		post_data.heroes = [recommendBody.hero];
 		post_data.deck_categories = [recommendBody.deckCategory];
-		post_data.centerpiece_cards = [recommendBody.centerpieceCard];
+		post_data.centerpiece_cards = [];
+		//recommendBody.centerpieceCard.forEach(el => post_data.centerpiece_cards = [...post_data.centerpiece_cards, el.id]);
+		post_data.centerpiece_cards = [recommendBody.centerpieceCard.id];
 	}
 
 	function addOrRemoveFromArray(arr, el) {
