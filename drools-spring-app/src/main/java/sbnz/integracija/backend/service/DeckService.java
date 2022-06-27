@@ -48,6 +48,7 @@ public class DeckService {
 
     public DeckResultDTO recommendDeckForwardChain(MetaRank metaRank, List<DeckCategory> categories, List<Hero> heroes, List<Card> centerpieces ){
         //fire chain
+        /*
         centerpieces = new ArrayList<>();
         for(Card card: cardRepository.findAllByIsCenterpieceEquals(true)){
             if(getRandomNumber(0,2) == 1){
@@ -62,6 +63,7 @@ public class DeckService {
         categories.add(DeckCategory.MIDGAME);
         categories.add(DeckCategory.AGGRO);
         categories.add(DeckCategory.ATTRITION);
+        */
 
         KieSession kieSession = kieContainer.newKieSession("deckRecommendingRulesSession");
         kieSession.setGlobal("deckw", new HashMap<>());
