@@ -6,4 +6,8 @@
 		<ksession name="matchHistoryRulesSession" type="stateful"/>
 	</kbase>
 
+	<kbase name="deckRecommendingRules" packages="sbnz.integracija.deckRecommendingRules">
+		<ksession name="deckRecommendingRulesSession" type="stateful"/>
+	</kbase>
+
 </kmodule>
