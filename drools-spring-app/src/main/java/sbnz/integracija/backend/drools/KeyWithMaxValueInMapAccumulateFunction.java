@@ -54,10 +54,10 @@ public class KeyWithMaxValueInMapAccumulateFunction implements org.kie.api.runti
 
         Map map = (Map<String, Object>) parameters;
         Object key = map.get("key");
-        Integer val = (Integer) map.get("val");
+        Double val = (Double) map.get("val");
         Map countMap = (Map) map.get("map");
 
-        if (c.returnKey == null || val > (Integer) countMap.get(c.returnKey))
+        if (c.returnKey == null || val > (Double) countMap.get(c.returnKey))
             c.returnKey = key;
     }
 

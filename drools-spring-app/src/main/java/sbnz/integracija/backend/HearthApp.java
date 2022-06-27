@@ -12,6 +12,8 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.Bean;
+import sbnz.integracija.backend.facts.MetaRank;
+import sbnz.integracija.backend.service.DeckService;
 
 @SpringBootApplication
 public class HearthApp {
@@ -29,6 +31,8 @@ public class HearthApp {
 //			sb.append(beanName + "\n");
 //		}
 //		log.info(sb.toString());
+		//DeckService service = ctx.getBean(DeckService.class);
+		//service.StartBackwardChain(MetaRank.RANKS_15_10, null, null, null);
 	}
 
 	@Bean

@@ -1,0 +1,119 @@
+package sbnz.integracija;
+
+import sbnz.integracija.backend.facts.*;
+import sbnz.integracija.backend.dto.*;
+import java.util.*
+import java.lang.*
+
+import accumulate sbnz.integracija.backend.drools.MetaDeckWinrateAccumulateFunction metaDeckWinrateAccumulateFunction;
+import accumulate sbnz.integracija.backend.drools.ContainsCenterpieceDeckWinrateAccumulateFunction containsCenterpieceDeckWinrateAccumulateFunction;
+import accumulate sbnz.integracija.backend.drools.ContainsCategoryDeckWinrateAccumulateFunction containsCategoryDeckWinrateAccumulateFunction;
+import accumulate sbnz.integracija.backend.drools.ContainsHeroDeckWinrateAccumulateFunction containsHeroDeckWinrateAccumulateFunction;
+import accumulate sbnz.integracija.backend.drools.KeyWithMaxValueInMapAccumulateFunction keyWithMaxValueInMapAccumulateFunction;
+
+global java.util.Map deckw
+
+rule "All decks from inserted Meta"
+    salience 4
+    dialect "mvel"
+    when
+        $metaRank: MetaRank()
+        accumulate(
+            Meta($mr: metaRank, $dw: deckWinrate),
+            $deckWinrate: metaDeckWinrateAccumulateFunction(
+            ["metaRank": (Object)$metaRank, "mr": (Object)$mr, "dw": (Object)$dw]
+            )
+        )
+    then
+        System.out.println(((Map) $deckWinrate).size());
+        insert($deckWinrate)
+end
+
+rule "Filter decks containing at least one inserted centerpiece cards, then category, then hero"
+    salience 3
+    dialect "mvel"
+    when
+        $deckWinrate: Map()
+        $centerpiece: Card()
+        $category: DeckCategory()
+        $hero: Hero()
+        accumulate(
+            Map.Entry($key: key, $val: value) from $deckWinrate.entrySet(),
+            $dw: containsCenterpieceDeckWinrateAccumulateFunction(
+            ["deck": (Object)$key, "winrate": (Object)$val, "centerpiece": (Object)$centerpiece]
+            )
+        )
+        accumulate(
+                            Map.Entry($key: key, $val: value) from $dw.entrySet(),
+                            $dw2: containsCategoryDeckWinrateAccumulateFunction(
+                            ["deck": (Object)$key, "winrate": (Object)$val, "category": (Object)$category]
+                            )
+                 )
+         accumulate(
+                     Map.Entry($key: key, $val: value) from $dw2.entrySet(),
+                     $dw3: containsHeroDeckWinrateAccumulateFunction(
+                     ["deck": (Object)$key, "winrate": (Object)$val, "hero": (Object)$hero]
+                     )
+                  )
+    then
+        //System.out.println(deckw.size());
+        for(Object entry:((Map) $dw3).entrySet()){
+            e = (Map.Entry)entry;
+            deckw.put(e.getKey(), e.getValue());
+        }
+        //System.out.println(deckw.size());
+end
+
+rule "Pick deck with highest winrate"
+    salience 2
+    dialect "mvel"
+    when
+        accumulate(
+            Map.Entry($key: key, $val: value) from deckw.entrySet(),
+            $highestWinrateDeck: keyWithMaxValueInMapAccumulateFunction( ["key" : (Object)$key, "val" : (Object)$val, "map" : (Object)deckw] )
+        )
+        $output: DeckResultDTO()
+    then
+        $output.setDeck((Deck) $highestWinrateDeck);
+end
+
+/*
+rule "Filter decks containing at least one inserted deck categories"
+    salience 2
+    dialect "mvel"
+    when
+        $category: DeckCategory()
+        accumulate(
+                    Map.Entry($key: key, $val: value) from deckw.entrySet(),
+                    $dw: containsCategoryDeckWinrateAccumulateFunction(
+                    ["deck": (Object)$key, "winrate": (Object)$val, "category": (Object)$category]
+                    )
+         )
+    then
+        //System.out.println(deckw.size());
+        for(Object entry:((Map) $dw).entrySet()){
+                    e = (Map.Entry)entry;
+                    deckw.put(e.getKey(), e.getValue());
+                }
+end
+
+rule "Filter decks containing at least one inserted deck heroes"
+    salience 1
+    dialect "mvel"
+    when
+        $hero: Hero()
+        accumulate(
+            Map.Entry($key: key, $val: value) from deckw.entrySet(),
+            $dw: containsHeroDeckWinrateAccumulateFunction(
+            ["deck": (Object)$key, "winrate": (Object)$val, "hero": (Object)$hero]
+            )
+         )
+    then
+        //System.out.println(deckw.size());
+        for(Object entry:((Map) $dw).entrySet()){
+                    e = (Map.Entry)entry;
+                    deckw.put(e.getKey(), e.getValue());
+                }
+        System.out.println(deckw.size());
+end
+*/
