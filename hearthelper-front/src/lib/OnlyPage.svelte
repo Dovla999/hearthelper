@@ -77,8 +77,8 @@
 	}
 
 	async function recommendDeck() {
-		// res = await api('POST', 'joksi-route', post_data);
-		const res = await api('GET', 'sample-deck');
+		const res = await api('POST', 'decks/recommend-deck', post_data);
+		//const res = await api('GET', 'sample-deck');
 		const deck = await res.json();
 		recommended_deck.name = deck.name;
 		recommended_deck.cards = deck.cards;
